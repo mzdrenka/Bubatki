@@ -99,6 +99,19 @@ DATABASES = {
     }
 }
 
+# Email configuration file location
+EMAIL_CONF_FILE = f'{BASE_DIR}/bubatki/email.conf'
+
+# Read the configurations from file
+EMAIL_CONFIG = ConfigObj(EMAIL_CONF_FILE)
+
+EMAIL_HOST = EMAIL_CONFIG['EMAIL_HOST']
+EMAIL_HOST_USER = EMAIL_CONFIG['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = EMAIL_CONFIG['EMAIL_HOST_PASSWORD']
+EMAIL_PORT = EMAIL_CONFIG['EMAIL_PORT']
+EMAIL_USE_TLS = EMAIL_CONFIG['EMAIL_USE_TLS']
+
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -122,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'UTC'
 

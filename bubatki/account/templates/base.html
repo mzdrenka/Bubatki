@@ -24,7 +24,7 @@
           {% endif %}
         <span class="user">
           {% if request.user.is_authenticated %}
-            Witaj, {{ request_user.first_name }}!
+            Witaj, {{ request.user.first_name }}!
             <a href="{% url "logout" %}">Wyloguj</a>
           {% else %}
             <a href="{% url "login" %}">Zaloguj</a>  
