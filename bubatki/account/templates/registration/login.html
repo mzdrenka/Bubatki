@@ -17,6 +17,8 @@
             <input type="hidden" name="next" value="{{ next }}" />
             <p><input type="submit" value="zaloguj"></p>
         </form>
+        <li class="google"><a href="{% url "social:begin" "google-oauth2" %}">
+        Zaloguj się za pomocą konta Google</a></li>
         <p><a href="{% url "password_reset" %}">Zapomniałeś hasła?</a></p> 
     </div>
 {% endblock %}
